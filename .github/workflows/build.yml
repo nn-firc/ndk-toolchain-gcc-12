@@ -27,7 +27,7 @@ jobs:
       if: ${{ failure() }}
       uses: mxschmitt/action-tmate@v3
     - name: Upload Build Archive
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3
       with:
         name: newer-toolchain-${{ matrix.target_arch }}-${{ github.sha }}
         path: ${{ github.workspace }}/build/
@@ -38,7 +38,7 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - name: Fetch archives
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v3
         with:
           path: ./
       - name: Copy archives
@@ -61,6 +61,6 @@ jobs:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           file: "*.tar.bz2"
           file_glob: true
-          release_name: "Android NDK toolchain version r17c with gcc" 
+          release_name: "Android NDK toolchain version r13b with gcc" 
           tag: ${{ steps.tag.outputs.tag }}
           body: ${{ steps.checksums.outputs.checksums }}
