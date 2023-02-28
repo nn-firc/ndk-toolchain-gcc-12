@@ -19,7 +19,7 @@
 set -e -u -o pipefail
 
 _SCRIPTDIR=$(cd "$(realpath "$(dirname "$0")")"; pwd)
-source $_SCRIPTDIR/common-files/setup_toolchain_ndk_r17c.sh
+source $_SCRIPTDIR/common-files/setup_toolchain_ndk_r13b.sh
 source $_SCRIPTDIR/common-files/termux_download.sh
 
 : ${TOOLCHAIN_ARCH:=aarch64}
@@ -73,7 +73,7 @@ BINUTILS_SRC_DIR=$_TMP_DIR/binutils-${BINUTILS_VERSION}
 termux_download $BINUTILS_SRC_URL $BINUTILS_SRC_FILE $BINUTILS_SHA256
 
 # Setup a standalone toolchain
-_setup_standalone_toolchain_ndk_r17c $_TMP_DIR/standalone-toolchain
+_setup_standalone_toolchain_ndk_r13b $_TMP_DIR/standalone-toolchain
 cp -R $_TMP_DIR/standalone-toolchain/sysroot/usr/include/$_HOST_PLATFORM/* $_TMP_DIR/standalone-toolchain/sysroot/usr/include/
 
 # Extract source
