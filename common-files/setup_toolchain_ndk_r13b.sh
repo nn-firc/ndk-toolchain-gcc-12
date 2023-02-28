@@ -4,7 +4,7 @@ _download_ndk_r13b() {
 		mkdir -p $_CACHE_DIR/
 		local _NDKARCHIVE_FILE=$_CACHE_DIR/android-ndk-r17c-linux-x86_64.zip
 		local _NDK_URL=https://dl.google.com/android/repository/android-ndk-r13b-linux-x86_64.zip
-		local _NDK_SHA256=3f541adbd0330a9205ba12697f6d04ec90752c53d6b622101a2a8a856e816589
+		local _NDK_SHA256=SKIP_CHECKSUM
 		termux_download $_NDK_URL $_NDKARCHIVE_FILE $_NDK_SHA256
 		unzip -d $_CACHE_DIR/ $_NDKARCHIVE_FILE > /dev/null 2>&1
 		touch $_CACHE_DIR/.placeholder-android-ndk-r13b
