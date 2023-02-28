@@ -74,7 +74,6 @@ termux_download $BINUTILS_SRC_URL $BINUTILS_SRC_FILE $BINUTILS_SHA256
 
 # Setup a standalone toolchain
 _setup_standalone_toolchain_ndk_r13b $_TMP_DIR/standalone-toolchain
-cp -R $_TMP_DIR/standalone-toolchain/sysroot/usr/include/$_HOST_PLATFORM/* $_TMP_DIR/standalone-toolchain/sysroot/usr/include/
 
 # Extract source
 tar -xf $GCC_SRC_FILE -C $_TMP_DIR/
